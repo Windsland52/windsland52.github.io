@@ -224,7 +224,16 @@ btf.addGlobalFn('pjaxComplete', () => {
     if (isShuoshuo) {
       actualId = path || window.location.pathname
     } else {
-      actualId = (option && option.id) || 'd41d8cd98f00b204e9800998ecf8427e' || btf.md5(window.location.pathname)
+      // 优先使用配置的 ID，然后使用页面路径
+      if (option && option.id) {
+        actualId = option.id
+      } else if ('posts/4a17b156.html') {
+        // 直接使用页面路径，替换特殊字符
+        actualId = 'posts/4a17b156.html'.replace(/[^a-zA-Z0-9]/g, '-')
+      } else {
+        // 使用当前路径，替换特殊字符
+        actualId = window.location.pathname.replace(/[^a-zA-Z0-9]/g, '-')
+      }
     }
     
     console.log('Final ID:', actualId)

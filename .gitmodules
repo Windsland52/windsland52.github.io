@@ -4,5 +4,5 @@
     branch = master
 [submodule ".deploy_git"]
     path = .deploy_git
-    url = https://github.com/Windsland52/hexo-theme-butterfly.git
+    url = https://github.com/Windsland52/windsland52.github.io.git
     branch = hexo

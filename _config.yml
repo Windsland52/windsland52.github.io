@@ -107,4 +107,4 @@ theme: butterfly
 deploy:
   type: git
   repository: https://github.com/Windsland52/windsland52.github.io.git
-  branch: main
+  branch: hexo

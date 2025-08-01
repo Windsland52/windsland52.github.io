@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>MST2.0开发总述</title>
+      <link href="/posts/2a9d3d8d.html"/>
+      <url>/posts/2a9d3d8d.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>几个月前尝试使用<a href="https://github.com/MaaXYZ/MaaFramework">MaaFramework</a>(下称<code>maafw</code>)的pipeline完成<a href="https://github.com/Windsland52/MST">MST</a>的基本实现，现趁<code>maafw</code>更新到2.0之际，决定实现部分功能自行集成，并配上简单的 gui 界面。</p><h2 id="任务分析"><a href="#任务分析" class="headerlink" title="任务分析"></a>任务分析</h2><h3 id="原pipeline的修改"><a href="#原pipeline的修改" class="headerlink" title="原pipeline的修改"></a>原pipeline的修改</h3><p>在之前的工作中，由于本人对<code>maafw</code>的了解不够充分，有部分内容(如：<code>interface.json</code>)编写稍有瑕疵，现在需要在更新过程中完成修改。</p><h3 id="集成的实现"><a href="#集成的实现" class="headerlink" title="集成的实现"></a>集成的实现</h3><p>另一个重要任务便是实现集成。本人当前对翻阅使用文档和各个相关项目后依旧是一头雾水，<code>maafw 1.8</code>之前的集成实现有所了解，但2.0后废除 <code>ExecAgent</code> 功能及相关接口，需重新实现集成。</p><h3 id="GUI的实现"><a href="#GUI的实现" class="headerlink" title="GUI的实现"></a>GUI的实现</h3><p>当前预计采用<code>pyqt</code>设计界面，期望实现：</p><ul><li>adb 连接</li><li>功能添加、删除、拖动</li><li>log显示</li></ul><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>以上三点是较重要较急的任务，其他暂时想到的还有识别的优化（训练模型）、资源更新。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MaaFramework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MaaFramework </tag>
+            
+            <tag> MST </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>洛谷入门题单</title>
       <link href="/posts/bd191917.html"/>
       <url>/posts/bd191917.html</url>

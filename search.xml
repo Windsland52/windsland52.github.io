@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>MST2.0开发(7)--任务奖励/通行证</title>
+      <link href="/posts/a298c380.html"/>
+      <url>/posts/a298c380.html</url>
+      
+        <content type="html"><![CDATA[<p>这部分用到了 <code>颜色匹配(ColorMatch)</code> ，文档暂时写的还不全，故这里简单讲一下。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;一键领取&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;recognition&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ColorMatch&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;roi&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">180</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">566</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">161</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">46</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;lower&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">230</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">190</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">9</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;upper&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">280</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">240</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">59</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Click&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p><code>method</code> 默认 4，选择 <code>RGB</code> 。</p><p>找到颜色所在界面，截图，然后放到 <code>ps</code> 等工具里取色，获取RBG值。</p><p>设置合理的范围，这里lower和upper分别设置为RBG值-25和+25。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MaaFramework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MaaFramework </tag>
+            
+            <tag> MST </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MST2.0开发(6)--家园</title>
       <link href="/posts/f746cb05.html"/>
       <url>/posts/f746cb05.html</url>
@@ -38,35 +67,6 @@
       <url>/posts/fcd3c1f1.html</url>
       
         <content type="html"><![CDATA[<p>没啥新东西，自己到 <code>canteen.json</code> 看吧。</p><p>注意 <code>roi</code> 填的 string (任务名)：填写任务名，在之前执行过的某任务识别到的目标范围内识别。这里是任务匹配上的范围，不是其 <code>roi</code> 范围。</p><p>然后是一个 <code>replace</code> 的样例，文档里没写，我来补充一下。</p><p>现欲识别目标串“空白区域”，由于ocr模型等原因，会将 <code>白</code> 识别为 <code>自</code>、<code>目</code> ，期望的 pipeline 写法为：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;recognition&quot;</span><span class="punctuation">:</span> <span class="string">&quot;OCR&quot;</span><span class="punctuation">,</span>  </span><br><span class="line">    <span class="attr">&quot;expected&quot;</span><span class="punctuation">:</span> <span class="string">&quot;空白区域&quot;</span><span class="punctuation">,</span>  </span><br><span class="line">    <span class="attr">&quot;replace&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>  </span><br><span class="line">        <span class="string">&quot;(目|自)&quot;</span><span class="punctuation">,</span>  </span><br><span class="line">        <span class="string">&quot;白&quot;</span>  </span><br><span class="line">    <span class="punctuation">]</span>  </span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>可用正则匹配。正则相关可以查询[菜鸟教程](<a href="https://www.runoob.com/python3/python3-reg-expressions.html">Python3 正则表达式 | 菜鸟教程 (runoob.com)</a>)。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> MaaFramework </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> MaaFramework </tag>
-            
-            <tag> MST </tag>
-            
-            <tag> 开发 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MST2.0开发(7)--任务奖励/通行证</title>
-      <link href="/posts/a298c380.html"/>
-      <url>/posts/a298c380.html</url>
-      
-        <content type="html"><![CDATA[<p>这部分用到了 <code>颜色匹配(ColorMatch)</code> ，文档暂时写的还不全，故这里简单讲一下。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;一键领取&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;recognition&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ColorMatch&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;roi&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">180</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">566</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">161</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">46</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;lower&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">230</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">190</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">9</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;upper&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="number">280</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">240</span><span class="punctuation">,</span></span><br><span class="line">            <span class="number">59</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Click&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p><code>method</code> 默认 4，选择 <code>RGB</code> 。</p><p>找到颜色所在界面，截图，然后放到 <code>ps</code> 等工具里取色，获取RBG值。</p><p>设置合理的范围，这里lower和upper分别设置为RBG值-25和+25。</p>]]></content>
       
       
       <categories>

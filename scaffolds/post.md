@@ -1,8 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
+series: 
 categories:
-  - 编程
+  - MaaFramework
 tags: []
 description: 
 cover: 

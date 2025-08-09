@@ -1,7 +1,14 @@
 - class_name: 友情链接
-  class_desc: 那些人，那些事
   link_list:
-    - name: Hexo
-      link: https://hexo.io/zh-tw/
-      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、简单且强大的网志框架
+    - name: M9A
+      link: https://1999.fan
+      avatar: https://mirrorchyan.com/api/misc/static/project/M9A.png
+      descr: 重返未来：1999 小助手 | Assistant For Reverse: 1999
+    - name: MaaFramework
+      link: https://github.com/MaaXYZ/MaaFramework
+      avatar: https://mirrorchyan.com/api/misc/static/project/maa-logo_512x512.png
+      descr: 基于图像识别的自动化黑盒测试框架 | An automation black-box testing framework based on image recognition
+    - name: MirrorChyan
+      link: https://mirrorchyan.com
+      avatar: https://mirrorchyan.com/favicon.ico
+      descr: 第三方应用分发平台，让开源应用的更新更简单

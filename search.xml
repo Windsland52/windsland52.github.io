@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>项目搭建</title>
+      <link href="/posts/fa66f726.html"/>
+      <url>/posts/fa66f726.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> MaaFramework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> MaaFramework </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开发MaaFw项目全流程</title>
+      <link href="/posts/b369e182.html"/>
+      <url>/posts/b369e182.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>本人于24年3月了解到<a href="https://github.com/MaaXYZ/MaaFramework">MaaFramework</a>，<br>为深入了解框架，尝试开发了自己的第一个MaaFramework项目——<a href="https://github.com/Windsland52/MST">MST</a>，<br>而后经过陆陆续续7个月的实践，偶有机会深入参与<a href="https://github.com/MAA1999/M9A">M9A</a>项目开发，并一直维护至今。</p><p>在开发群中，和各个开发者的日常交流中，经常发现有新开发者各种踩坑，<br>回想我开发的历程也常有坎坷，如果当时有更详细的教程，或许能更加顺利。<br>故决定写一系列教程，详细介绍使用MaaFramework进行开发的各种坑点与注意事项，望对各位读者能有所帮助。</p><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>Maa框架项目目前有三种开发思路，可见<a href="https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md#%E5%BC%80%E5%8F%91%E6%80%9D%E8%B7%AF">快速开始-开发思路</a>。</p><p>对于所有入门者，推荐从第一种<strong>纯pipeline</strong>的方式开始。<br>这种方式入门较其它方式简单，社区生态完整，技术成熟。只要将本种方式掌握，日后如有需求，在此基础上转其它两种方式也容易。</p><p>本系列也会先从这种方式的开发讲起。</p><h2 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h2><p>对于纯pipeline开发方式，Maa框架提供了一个<a href="https://github.com/MaaXYZ/MaaPracticeBoilerplate">模板项目</a>，方便直接搭建项目。后续会详细介绍搭建过程。</p><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><p>平时用的多的工具有 git（版本控制系统，方便代码管理）、VSCode（轻量级源代码编辑器，并且有maa框架开发插件适配），需熟练使用，后续也会提到部分操作。</p><h2 id="核心协议"><a href="#核心协议" class="headerlink" title="核心协议"></a>核心协议</h2><p>maa框架的核心是<a href="https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.1-%E4%BB%BB%E5%8A%A1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%8F%E8%AE%AE.md">pipeline协议</a>，教程后面的重点也会放在解读这部分。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MaaFw教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> MaaFramework </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MST2.0开发(7)--任务奖励/通行证</title>
       <link href="/posts/a298c380.html"/>
       <url>/posts/a298c380.html</url>

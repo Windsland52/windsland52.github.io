@@ -4,11 +4,40 @@
   
     
     <entry>
+      <title>SQL高频50题-基础</title>
+      <link href="/posts/bb52c5d4.html"/>
+      <url>/posts/bb52c5d4.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.cn/studyplan/sql-free-50/">题单</a></p><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="1757-可回收且低脂的产品"><a href="#1757-可回收且低脂的产品" class="headerlink" title="1757. 可回收且低脂的产品"></a>1757. 可回收且低脂的产品</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    product_id</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Products</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    low_fats <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">AND</span> recyclable <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span>;</span><br></pre></td></tr></table></figure><p>注意下格式</p><h3 id="584-寻找用户推荐人"><a href="#584-寻找用户推荐人" class="headerlink" title="584. 寻找用户推荐人"></a>584. 寻找用户推荐人</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    name</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Customer</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    referee_id <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">OR</span> referee_id <span class="operator">&lt;&gt;</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure><p><code>&lt;&gt;</code> 为不等于，<code>IS NULL</code> 用于判断是否为 <code>NULL</code>。<br>此外，直接用 <code>=</code> 不能判断 <code>NULL</code>，但用 <code>&lt;=&gt;</code> 可以判断。</p><h3 id="595-大的国家"><a href="#595-大的国家" class="headerlink" title="595. 大的国家"></a>595. 大的国家</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    name, population, area</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    World</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    area <span class="operator">&gt;=</span> <span class="number">3000000</span> <span class="keyword">OR</span> population <span class="operator">&gt;=</span> <span class="number">25000000</span>;</span><br></pre></td></tr></table></figure><h3 id="1148-文章浏览-I"><a href="#1148-文章浏览-I" class="headerlink" title="1148. 文章浏览 I"></a>1148. 文章浏览 I</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">DISTINCT</span> author_id <span class="keyword">AS</span> id</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Views</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    author_id <span class="operator">=</span> viewer_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">    id;</span><br></pre></td></tr></table></figure><p><code>SELECT DISTINCT</code> 用于返回唯一不同的值。</p><p><code>ORDER BY column_name [ASC|DESC]</code> 用于对结果进行排序，默认升序。</p><h3 id="1683-无效的推文"><a href="#1683-无效的推文" class="headerlink" title="1683. 无效的推文"></a>1683. 无效的推文</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    tweet_id</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Tweets</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    <span class="keyword">CHAR_LENGTH</span>(content) <span class="operator">&gt;</span> <span class="number">15</span>;</span><br></pre></td></tr></table></figure><p>有 <code>CHAR_LENGTH()</code> 和 <code>LENGTH()</code> 两种计算方式，前者计算字符数，后者计算字节数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 题解 </tag>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>项目搭建</title>
       <link href="/posts/fa66f726.html"/>
       <url>/posts/fa66f726.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>本节将讲解Windows系统下配置模板项目的前置要求。</p><h3 id="安装-Python"><a href="#安装-Python" class="headerlink" title="安装 Python"></a>安装 Python</h3><p><a href="https://www.runoob.com/python3/python3-install.html">完整安装流程参考</a><br>请选择3.11及以上版本，可以使用3.12</p><p>这里再强调勾选 <code>Add Python 3.x to PATH</code>，勾选后安装便可以不进行环境变量配置<br><img src="https://www.runoob.com/wp-content/uploads/2018/07/20180226150011548.png" alt="Add Python 3.x to PATH"></p><h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p><a href="https://www.runoob.com/git/git-install-setup.html">完整流程</a>，请看 <code>Windows 平台上安装</code> 部分。</p><h3 id="安装-VSCode"><a href="#安装-VSCode" class="headerlink" title="安装 VSCode"></a>安装 VSCode</h3><p><a href="https://code.visualstudio.com/">官网</a> | <a href="https://www.runoob.com/vscode/vscode-windows-install.html">在 Windows 上安装流程</a></p>]]></content>
       
       
       <categories>
@@ -80,9 +109,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -109,9 +138,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -138,9 +167,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -167,9 +196,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -196,9 +225,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -225,9 +254,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -254,9 +283,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
@@ -283,9 +312,9 @@
             
             <tag> MaaFramework </tag>
             
-            <tag> MST </tag>
-            
             <tag> 开发 </tag>
+            
+            <tag> MST </tag>
             
         </tags>
       
